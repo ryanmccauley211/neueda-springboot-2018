@@ -1,4 +1,4 @@
-package uk.ac.belfastmet.space;
+package uk.ac.belfastmet.sbcontroller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
