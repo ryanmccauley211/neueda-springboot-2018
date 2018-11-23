@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="js/gallery.js"></script>
+	<title></title>
+</head>
+<body>
+	<div class="container">
+	
+	<div th:replace="layouts/banner :: bannerFragment"></div>
+	<div th:replace="layouts/nav :: navFragment"></div>
+		
+		<div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="http://www.yourenergyblog.com/wp-content/uploads/2013/06/big-building-energy.png"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail"
+                         src="http://www.yourenergyblog.com/wp-content/uploads/2013/06/big-building-energy.png"
+                         alt="Another alt text">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="https://i.ytimg.com/vi/y_FhplavvQM/hqdefault.jpg"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail"
+                         src="https://i.ytimg.com/vi/y_FhplavvQM/hqdefault.jpg"
+                         alt="Another alt text">
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2fkJ6Rz6hJQE1awfSqxDV3rDp-OdgiXJvmMngVXAEF6aEyux1gA"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail img-fluid"
+                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2fkJ6Rz6hJQE1awfSqxDV3rDp-OdgiXJvmMngVXAEF6aEyux1gA"
+                         alt="Another alt text">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
+                   data-image="https://upload.wikimedia.org/wikipedia/commons/0/02/Beetham_Tower_from_below.jpg"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail"
+                         src="https://upload.wikimedia.org/wikipedia/commons/0/02/Beetham_Tower_from_below.jpg"
+                         alt="Another alt text">
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                   data-image="http://www.visions.az/uploads/single_images/14_02_2017/building_04_big.jpg"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail"
+                         src="http://www.visions.az/uploads/single_images/14_02_2017/building_04_big.jpg"
+                         alt="Another alt text">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                   data-image="https://i2.wp.com/securityelectronicsandnetworks.com/wp-content/uploads/2018/05/Monash-University-2.jpg-MR.jpg?fit=783%2C559&ssl=1"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail"
+                         src="https://i2.wp.com/securityelectronicsandnetworks.com/wp-content/uploads/2018/05/Monash-University-2.jpg-MR.jpg?fit=783%2C559&ssl=1"
+                         alt="Another alt text">
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                   data-image="https://twistedsifter.files.wordpress.com/2010/03/water-drop-building-in-china-ncpa-beijing.jpg?w=799&h=535"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail"
+                         src="https://twistedsifter.files.wordpress.com/2010/03/water-drop-building-in-china-ncpa-beijing.jpg?w=799&h=535"
+                         alt="Another alt text">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                   data-image="http://www.golfbytourmiss.com/gbtm/wp-content/uploads/2015/02/2.-Yas-Mall-Abu-Dhabi.jpg"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail"
+                         src="http://www.golfbytourmiss.com/gbtm/wp-content/uploads/2015/02/2.-Yas-Mall-Abu-Dhabi.jpg"
+                         alt="Another alt text">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                   data-image="https://static.dezeen.com/uploads/2018/04/the-xi-big-architecture-new-york-city-bjarke-ingels-usa_dezeen_2364_sq-852x852.jpg"
+                   data-target="#image-gallery">
+                    <img class="img-thumbnail"
+                         src="https://static.dezeen.com/uploads/2018/04/the-xi-big-architecture-new-york-city-bjarke-ingels-usa_dezeen_2364_sq-852x852.jpg"
+                         alt="Another alt text">
+                </a>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="image-gallery-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="image-gallery-image" class="img-responsive col-md-12" src="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i>
+                        </button>
+
+                        <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</body>
+</html>
