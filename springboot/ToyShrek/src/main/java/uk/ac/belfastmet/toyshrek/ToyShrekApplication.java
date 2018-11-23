@@ -2,7 +2,6 @@ package uk.ac.belfastmet.toyshrek;
 
 import org.springframework.boot.SpringApplication;
 
-// this is a change for git to find
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
