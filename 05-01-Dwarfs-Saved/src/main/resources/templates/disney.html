@@ -13,7 +13,7 @@
 	<div class="container fill">
 		<nav th:replace="layouts/nav :: navFragment"></nav>
 	
-		<h2 class=page-title>Disney Dwarfs</h2>
+		<h2 th:text="${pageTitle} + ' ' + Dwarfs" class=page-title></h2>
 		
 		<table class="table table-striped">
 			<thead>

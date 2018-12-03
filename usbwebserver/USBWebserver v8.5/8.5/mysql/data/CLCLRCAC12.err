@@ -1,0 +1,55 @@
+181203 11:53:18 [Note] Plugin 'FEDERATED' is disabled.
+181203 11:53:18 InnoDB: The InnoDB memory heap is disabled
+181203 11:53:18 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+181203 11:53:18 InnoDB: Compressed tables use zlib 1.2.3
+181203 11:53:18 InnoDB: Initializing buffer pool, size = 128.0M
+181203 11:53:18 InnoDB: Completed initialization of buffer pool
+InnoDB: The first specified data file C:\Users\mcc12068703\Documents\neueda-springboot-2018\usbwebserver\USBWebserver v8.5\8.5\mysql\data\ibdata1 did not exist:
+InnoDB: a new database to be created!
+181203 11:53:18  InnoDB: Setting file C:\Users\mcc12068703\Documents\neueda-springboot-2018\usbwebserver\USBWebserver v8.5\8.5\mysql\data\ibdata1 size to 10 MB
+InnoDB: Database physically writes the file full: wait...
+181203 11:53:19  InnoDB: Log file C:\Users\mcc12068703\Documents\neueda-springboot-2018\usbwebserver\USBWebserver v8.5\8.5\mysql\data\ib_logfile0 did not exist: new to be created
+InnoDB: Setting log file C:\Users\mcc12068703\Documents\neueda-springboot-2018\usbwebserver\USBWebserver v8.5\8.5\mysql\data\ib_logfile0 size to 5 MB
+InnoDB: Database physically writes the file full: wait...
+181203 11:53:19  InnoDB: Log file C:\Users\mcc12068703\Documents\neueda-springboot-2018\usbwebserver\USBWebserver v8.5\8.5\mysql\data\ib_logfile1 did not exist: new to be created
+InnoDB: Setting log file C:\Users\mcc12068703\Documents\neueda-springboot-2018\usbwebserver\USBWebserver v8.5\8.5\mysql\data\ib_logfile1 size to 5 MB
+InnoDB: Database physically writes the file full: wait...
+InnoDB: Doublewrite buffer not found: creating new
+InnoDB: Doublewrite buffer created
+InnoDB: 127 rollback segment(s) active.
+InnoDB: Creating foreign key constraint system tables
+InnoDB: Foreign key constraint system tables created
+181203 11:53:20  InnoDB: Waiting for the background threads to start
+181203 11:53:21 InnoDB: 1.1.8 started; log sequence number 0
+181203 12:17:52 [Note] Plugin 'FEDERATED' is disabled.
+181203 12:17:52 InnoDB: The InnoDB memory heap is disabled
+181203 12:17:52 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+181203 12:17:52 InnoDB: Compressed tables use zlib 1.2.3
+181203 12:17:52 InnoDB: Initializing buffer pool, size = 128.0M
+181203 12:17:52 InnoDB: Completed initialization of buffer pool
+181203 12:17:52 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+181203 12:17:52  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+181203 12:17:53  InnoDB: Waiting for the background threads to start
+181203 12:17:54 InnoDB: 1.1.8 started; log sequence number 1595675
+181203 12:18:28 [Note] Plugin 'FEDERATED' is disabled.
+181203 12:18:28 InnoDB: The InnoDB memory heap is disabled
+181203 12:18:28 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+181203 12:18:28 InnoDB: Compressed tables use zlib 1.2.3
+181203 12:18:28 InnoDB: Initializing buffer pool, size = 128.0M
+181203 12:18:28 InnoDB: Completed initialization of buffer pool
+181203 12:18:28 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+181203 12:18:28  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+181203 12:18:29  InnoDB: Waiting for the background threads to start
+181203 12:18:30 InnoDB: 1.1.8 started; log sequence number 1595675
