@@ -22,6 +22,25 @@
 			  <div class="col-5 jumbo-row"><a href="tolkien">Tolkien</a></div>
 		  </div>
 		</div>
+		
+		<h4>Find a dwarf!</h4>
+		<form action="/searchById" method="get">
+		  <div class="form-group">
+			<select name="category" class="browser-default custom-select">
+			  <option selected>Search by</option>
+			  <option value="name">Name</option>
+			  <option value="author">Author</option>
+			  <option value="id">ID</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+		    <label for="search-by-name"></label>
+		    <input name="val" type="text" class="form-control" id="pwd">
+		  </div>
+		  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+		</form>
+		
+		
 	</div>
 </body>
 </html>
