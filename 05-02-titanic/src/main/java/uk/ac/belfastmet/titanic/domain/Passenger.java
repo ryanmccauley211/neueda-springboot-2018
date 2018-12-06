@@ -2,22 +2,26 @@ package uk.ac.belfastmet.titanic.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Passenger {
 	
 	@Id
-	private int passengerId;
-	private boolean survived;
-	private int pClass;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer passengerId;
+	private Boolean survived;
+	private Integer pClass;
+	@NotEmpty
 	private String name;
 	private String sex;
-	private int age;
-	private int sibSp;
-	private int parch;
+	private Integer age;
+	private Integer sibSp;
+	private Integer parch;
 	private String ticket;
-	private double fare;
+	private Double fare;
 	private String cabin;
 	private String embarked;
 	
@@ -25,10 +29,9 @@ public class Passenger {
 		super();
 	}
 
-	public Passenger(int passengerId, boolean survived, int pClass, String name, String sex, int age, int sibSp,
-			int parch, String ticket, double fare, String cabin, String embarked) {
+	public Passenger(Boolean survived, Integer pClass, @NotEmpty String name, String sex, Integer age, Integer sibSp,
+			Integer parch, String ticket, Double fare, String cabin, String embarked) {
 		super();
-		this.passengerId = passengerId;
 		this.survived = survived;
 		this.pClass = pClass;
 		this.name = name;
@@ -42,27 +45,27 @@ public class Passenger {
 		this.embarked = embarked;
 	}
 
-	public int getPassengerId() {
+	public Integer getPassengerId() {
 		return passengerId;
 	}
 
-	public void setPassengerId(int passengerId) {
+	public void setPassengerId(Integer passengerId) {
 		this.passengerId = passengerId;
 	}
 
-	public boolean isSurvived() {
+	public Boolean getSurvived() {
 		return survived;
 	}
 
-	public void setSurvived(boolean survived) {
+	public void setSurvived(Boolean survived) {
 		this.survived = survived;
 	}
 
-	public int getpClass() {
+	public Integer getpClass() {
 		return pClass;
 	}
 
-	public void setpClass(int pClass) {
+	public void setpClass(Integer pClass) {
 		this.pClass = pClass;
 	}
 
@@ -82,27 +85,27 @@ public class Passenger {
 		this.sex = sex;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
-	public int getSibSp() {
+	public Integer getSibSp() {
 		return sibSp;
 	}
 
-	public void setSibSp(int sibSp) {
+	public void setSibSp(Integer sibSp) {
 		this.sibSp = sibSp;
 	}
 
-	public int getParch() {
+	public Integer getParch() {
 		return parch;
 	}
 
-	public void setParch(int parch) {
+	public void setParch(Integer parch) {
 		this.parch = parch;
 	}
 
@@ -114,11 +117,11 @@ public class Passenger {
 		this.ticket = ticket;
 	}
 
-	public double getFare() {
+	public Double getFare() {
 		return fare;
 	}
 
-	public void setFare(double fare) {
+	public void setFare(Double fare) {
 		this.fare = fare;
 	}
 
@@ -137,4 +140,7 @@ public class Passenger {
 	public void setEmbarked(String embarked) {
 		this.embarked = embarked;
 	}
+
+	
+	
 }

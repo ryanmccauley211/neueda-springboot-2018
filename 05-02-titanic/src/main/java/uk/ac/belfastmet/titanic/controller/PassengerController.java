@@ -71,15 +71,4 @@ public class PassengerController {
 		model.addAttribute("passengers", titanicRepository.findByPassengerIdOrderByNameAsc(passengerId));
 		return "view";
 	}
-	
-	@GetMapping("/delete/{passengerId}")
-	public String delete(Model model, @PathVariable("passengerId") Integer passengerId, 
-			RedirectAttributes redirectAttributes) {
-				
-		
-		redirectAttributes.addFlashAttribute("message", "Successfully deleted passenger");
-		titanicRepository.deleteById(passengerId);
-		return "redirect:/passengers";
-	}
-	
 }

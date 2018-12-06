@@ -25,22 +25,22 @@
 		  </div>
 		  <div class="form-group">
 		    <input name="val" type="text" class="form-control">
-
-		<div class="form-check-inline">
-		  <label class="form-check-label">
-		    <input name="radioValue" value="both" type="radio" class="form-check-input" checked>Both
-		  </label>
-		</div>
-		<div class="form-check-inline">
-		  <label class="form-check-label">
-		    <input name="radioValue" value="male" type="radio" class="form-check-input">Male
-		  </label>
-		</div>
-		<div class="form-check-inline disabled">
-		  <label class="form-check-label">
-		    <input name="radioValue" value="female" type="radio" class="form-check-input">Female
-		  </label>
-		</div><br>
+	
+			<div class="form-check-inline">
+			  <label class="form-check-label">
+			    <input name="radioValue" value="both" type="radio" class="form-check-input" checked>Both
+			  </label>
+			</div>
+			<div class="form-check-inline">
+			  <label class="form-check-label">
+			    <input name="radioValue" value="male" type="radio" class="form-check-input">Male
+			  </label>
+			</div>
+			<div class="form-check-inline disabled">
+			  <label class="form-check-label">
+			    <input name="radioValue" value="female" type="radio" class="form-check-input">Female
+			  </label>
+			</div><br>
 
 		  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
 		</form>
@@ -51,6 +51,9 @@
 				<th>Survived</th>
 				<th>Sex</th>
 				<th>Age</th>
+				<th></th>
+				<th colspan="2" align="center"><a href="add" ><img class="add-image" src="https://cdn4.iconfinder.com/data/icons/material-design-content-icons/512/add-circle-512.png"></a></th>
+				<th></th>
 			</thead>
 			<tbody>
 				<tr th:each="passenger: ${passengers}">
@@ -59,7 +62,8 @@
 					<td th:text=${passenger.sex}></td>
 					<td th:text=${passenger.age}></td>
 					<td><a th:href="@{/view/} + ${passenger.passengerId} + '/' + ${passenger.name}">More info</a></td>
-					<td><a th:href="@{/delete/} + ${passenger.passengerId}"><img class="delete-key" src="https://vignette.wikia.nocookie.net/robloxcreepypasta/images/8/8c/Delete.png/revision/latest?cb=20180119171940"></a></td>
+					<td><a th:href="@{/delete/} + ${passenger.passengerId}"><img class="delete-icon" src="https://vignette.wikia.nocookie.net/robloxcreepypasta/images/8/8c/Delete.png/revision/latest?cb=20180119171940"></a></td>
+					<td><a th:href="@{/edit/} + ${passenger.passengerId}"><img class="edit-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/UniversalEditButton3.png/220px-UniversalEditButton3.png"></a></td>
 				</tr>
 			</tbody>
 		</table>
