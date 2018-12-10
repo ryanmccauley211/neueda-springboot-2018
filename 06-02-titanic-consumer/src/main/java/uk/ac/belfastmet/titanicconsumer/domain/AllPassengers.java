@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class AllPassengers {
 	
 	private ArrayList<Passenger> allPassengers;
+	
 	public Passenger getPassengerWithId(Integer passengerId) {
 		
 		for (int i = 0; i < this.allPassengers.size(); i++) {
