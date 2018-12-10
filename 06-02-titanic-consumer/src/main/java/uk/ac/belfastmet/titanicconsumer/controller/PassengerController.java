@@ -15,7 +15,7 @@ import uk.ac.belfastmet.titanicconsumer.service.PassengerService;
 @Controller
 public class PassengerController {
 
-//	@Autowired
+	@Autowired
 	PassengerService passengerService;
 	AllPassengers allPassengers;
 	

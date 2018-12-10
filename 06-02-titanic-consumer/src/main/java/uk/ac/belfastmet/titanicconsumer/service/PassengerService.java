@@ -2,6 +2,8 @@ package uk.ac.belfastmet.titanicconsumer.service;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import uk.ac.belfastmet.titanicconsumer.domain.Passenger;
 
 public interface PassengerService {
