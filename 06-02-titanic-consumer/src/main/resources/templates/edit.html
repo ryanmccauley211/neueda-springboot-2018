@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<title>Passengers</title>
+</head>
+<body>
+	<div class="container fill">
+	
+		<nav th:replace="layouts/nav :: navFragment"></nav>
+		
+		<form id="search-form" action="search" method="get">
+		  <div class="form-group">
+			<select name="category" class="browser-default custom-select">
+			  <option selected>Search by</option>
+			  <option value="name">Name</option>
+			  <option value="sex">Sex</option>
+			  <option value="ticket">Ticket</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+		    <input name="val" type="text" class="form-control">
+		  </div>
+
+		<div class="form-check-inline">
+		  <label class="form-check-label">
+		    <input type="radio" class="form-check-input" name="both">Both
+		  </label>
+		</div>
+		<div class="form-check-inline">
+		  <label class="form-check-label">
+		    <input type="radio" class="form-check-input" name="male">Male
+		  </label>
+		</div>
+		<div class="form-check-inline disabled">
+		  <label class="form-check-label">
+		    <input type="radio" class="form-check-input" name="female" disabled>Female
+		  </label>
+		</div><br>
+
+		  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+		</form>
+		
+		<form class="form-horizontal" th:action="@{/save}" method="post">
+			<table class="table table-striped">
+				<thead>
+					<th>Name</th>
+					<th>Survived</th>
+					<th>Sex</th>
+					<th>Age</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input type="text" class="form-control" th:field="${passenger.name}">
+								<span th:if="${#fields.hasErrors('passenger.name')}" th:errors="${passenger.name}"th:class="help-block">
+									Name cannot be empty
+								</span>
+							</input>
+						</td>
+						<input style="display:none;" type="text" class="form-control" th:field="${passenger.passengerId}"></input>
+						<td><input type="text" class="form-control" th:field="${passenger.survived}"></input></td>
+						<td><input type="text" class="form-control" th:field="${passenger.sex}"></input></td>
+						<td><input type="text" class="form-control" th:field="${passenger.age}"></input></td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+	</div>
+</body>
+</html>

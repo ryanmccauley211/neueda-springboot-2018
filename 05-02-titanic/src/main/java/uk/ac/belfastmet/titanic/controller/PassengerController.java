@@ -23,6 +23,8 @@ public class PassengerController {
 	
 	private TitanicRepository titanicRepository;
 	
+	public PassengerController() {super();}
+	
 	public PassengerController(TitanicRepository titanicRepository) {
 		super();
 		this.titanicRepository = titanicRepository;

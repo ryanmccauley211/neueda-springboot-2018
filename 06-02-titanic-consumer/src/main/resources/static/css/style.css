@@ -1,0 +1,13 @@
+#search-form {
+	padding: 20px;
+}
+
+.delete-icon, .edit-icon {
+	width: 20px;
+	height: 20px;
+}
+
+.add-image {
+	width: 40px;
+	height: 40px;
+}
