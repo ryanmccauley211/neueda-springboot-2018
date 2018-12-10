@@ -1,8 +1,8 @@
-[Thu Dec 06 09:24:43 2018] [notice] Apache/2.2.21 (Win32) PHP/5.3.9 configured -- resuming normal operations
-[Thu Dec 06 09:24:43 2018] [notice] Server built: Sep 10 2011 11:34:11
-[Thu Dec 06 09:24:43 2018] [notice] Parent: Created child process 1476
-[Thu Dec 06 09:24:44 2018] [notice] Child 1476: Child process is running
-[Thu Dec 06 09:24:44 2018] [notice] Child 1476: Acquired the start mutex.
-[Thu Dec 06 09:24:44 2018] [notice] Child 1476: Starting 64 worker threads.
-[Thu Dec 06 09:24:44 2018] [notice] Child 1476: Starting thread to listen on port 8888.
-[Thu Dec 06 09:24:44 2018] [notice] Child 1476: Starting thread to listen on port 8888.
+[Mon Dec 10 11:21:45 2018] [notice] Apache/2.2.21 (Win32) PHP/5.3.9 configured -- resuming normal operations
+[Mon Dec 10 11:21:45 2018] [notice] Server built: Sep 10 2011 11:34:11
+[Mon Dec 10 11:21:45 2018] [notice] Parent: Created child process 8888
+[Mon Dec 10 11:21:46 2018] [notice] Child 8888: Child process is running
+[Mon Dec 10 11:21:46 2018] [notice] Child 8888: Acquired the start mutex.
+[Mon Dec 10 11:21:46 2018] [notice] Child 8888: Starting 64 worker threads.
+[Mon Dec 10 11:21:46 2018] [notice] Child 8888: Starting thread to listen on port 8888.
+[Mon Dec 10 11:21:46 2018] [notice] Child 8888: Starting thread to listen on port 8888.
