@@ -10,23 +10,24 @@ import org.springframework.web.util.UriComponentsBuilder;
 import uk.ac.belfastmet.titanicconsumer.domain.AllPassengers;
 import uk.ac.belfastmet.titanicconsumer.domain.Passenger;
 
+@Service
 public class PassengerServiceImpl implements PassengerService {
 
 	@Value("${api.titanic.url}")
-	private String passengerUrl;
+	private String apiUrl;
 	private RestTemplate restTemplate;
-	public PassengerServiceImpl(String passengerUrl, RestTemplate restTemplate) {
+	
+	public PassengerServiceImpl(RestTemplate restTemplate) {
 		super();
-		this.passengerUrl = passengerUrl;
 		this.restTemplate = restTemplate;
 	}
 	
 	@Override
 	public ArrayList<Passenger> list() {
 		
-		UriComponentsBuilder getAllPassengersUrl = UriComponentsBuilder.fromUriString("http://localhost:8090/passengers");
+		String listPassengerUrl = apiUrl + "/passengers";
 		
-		AllPassengers allPassengers = this.restTemplate.getForObject(getAllPassengersUrl.toString(), 
+		AllPassengers allPassengers = this.restTemplate.getForObject(listPassengerUrl, 
 				AllPassengers.class);
 		
 		return allPassengers.getAllPassengers();
@@ -34,23 +35,33 @@ public class PassengerServiceImpl implements PassengerService {
 	
 	@Override
 	public Passenger get(Integer passengerId) {
-		UriComponentsBuilder getPassengerUri = UriComponentsBuilder.fromUriString("http://localhost:8090/passengers/100");
+		String getPassengerUri = apiUrl + "/passengers/" + passengerId;;
 		
-		return this.restTemplate.getForObject(getPassengerUri.toString(), Passenger.class);
+		return this.restTemplate.getForObject(getPassengerUri, Passenger.class);
 	}
 	
 	@Override
 	public Passenger add(Passenger passenger) {
-		return null;
+		
+		String addPassengerUrl = apiUrl + "/passengers/" + passenger.getPassengerId();
+
+		this.restTemplate.postForObject(addPassengerUrl, passenger, Passenger.class);
+		return passenger;
 	}
 	
 	@Override
 	public Passenger update(Passenger passenger) {
-		return null;
+		
+		String updatePassengerUrl = apiUrl + "/passengers/" + passenger.getPassengerId();
+
+		this.restTemplate.put(updatePassengerUrl, passenger, Passenger.class);
+		return passenger;
 	}
 	@Override
 	public void delete(Integer passengerId) {
-		
+		String deletePassengerUrl = apiUrl + "/passengers/" + passengerId;
+
+		this.restTemplate.delete(deletePassengerUrl);
 	}
 	
 }

@@ -23,6 +23,12 @@ public class PassengerController {
 		super();
 		}
 	
+	public PassengerController(PassengerService passengerService) {
+		super();
+		this.passengerService = passengerService;
+	}
+	
+	
 	public PassengerController(PassengerService passengerService, AllPassengers allPassengers) {
 		super();
 		this.passengerService = passengerService;
@@ -43,23 +49,15 @@ public class PassengerController {
 		return "passengers";
 	}
 	
-	@GetMapping("/view/{passengerId}/{name}")
-	public String view(Model model, @PathVariable("passengerId") Integer passengerId, @PathVariable("name") String name) {
-				
-		return "view";
-	}
-	
-	
-	
 	@GetMapping("/{passengerId}")
-	public String viewPassenger(@PathVariable("passengerId") Integer passengerId, Model model) {
+	public String view(@PathVariable("passengerId") Integer passengerId, Model model) {
 		
 		Passenger passenger = this.passengerService.get(passengerId);
 		
 		model.addAttribute("pageTitle", "View Passenger");
 		model.addAttribute("passenger", passenger);
 		
-		return "viewPassenger";
+		return "view";
 	}
 	
 

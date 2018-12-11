@@ -13,5 +13,5 @@ public interface PassengerService {
 	public Passenger add(Passenger passenger);
 	public Passenger update(Passenger passenger);
 	public void delete(Integer passengerId);
-
+	
 }

@@ -61,7 +61,7 @@
 					<td th:text="${passenger.survived ==True} ? 'Yes' : 'No'"></td>
 					<td th:text=${passenger.sex}></td>
 					<td th:text=${passenger.age}></td>
-					<td><a th:href="@{/view/} + ${passenger.passengerId} + '/' + ${passenger.name}">More info</a></td>
+					<td><a th:href="@{/view/} + ${passenger.passengerId}">More info</a></td>
 					<td><a th:href="@{/delete/} + ${passenger.passengerId}"><img class="delete-icon" src="https://vignette.wikia.nocookie.net/robloxcreepypasta/images/8/8c/Delete.png/revision/latest?cb=20180119171940"></a></td>
 					<td><a th:href="@{/edit/} + ${passenger.passengerId}"><img class="edit-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/UniversalEditButton3.png/220px-UniversalEditButton3.png"></a></td>
 				</tr>
