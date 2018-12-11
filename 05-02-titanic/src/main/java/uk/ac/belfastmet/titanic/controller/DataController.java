@@ -26,6 +26,7 @@ public class DataController {
 	@GetMapping("/edit/{passengerId}")
 	public String edit(@PathVariable("passengerId") Integer passengerId, Model model) {
 				
+		model.addAttribute("pageTitle", "edit");
 		model.addAttribute("passenger", titanicRepository.findById(passengerId));
 
 		return "edit";

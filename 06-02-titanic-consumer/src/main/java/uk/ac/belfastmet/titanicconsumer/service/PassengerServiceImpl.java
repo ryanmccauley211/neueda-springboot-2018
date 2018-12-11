@@ -26,10 +26,12 @@ public class PassengerServiceImpl implements PassengerService {
 	public ArrayList<Passenger> list() {
 				
 		String listPassengerUrl = apiUrl + "/passengers";
-		
+				
 		AllPassengers allPassengers = this.restTemplate.getForObject(listPassengerUrl, 
 				AllPassengers.class);
 		
+		System.out.println(allPassengers.getAllPassengers());
+				
 		return allPassengers.getAllPassengers();
 	}
 	

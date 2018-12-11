@@ -1,5 +1,8 @@
 package uk.ac.belfastmet.titanicconsumer.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +43,7 @@ public class PassengerController {
 	public String passengers(Model model) {
 				
 		model.addAttribute("passengers", this.passengerService.list());
-		
+				
 		return "passengers";
 	}
 	

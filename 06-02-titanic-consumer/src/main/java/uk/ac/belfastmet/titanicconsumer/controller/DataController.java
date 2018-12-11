@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import uk.ac.belfastmet.titanicconsumer.domain.Passenger;
@@ -31,7 +32,10 @@ public class DataController {
 	
 	@GetMapping("/edit/{passengerId}")
 	public String edit(@PathVariable("passengerId") Integer passengerId, Model model) {
-				
+		
+		model.addAttribute("pageTitle", "edit");
+		model.addAttribute("passenger", passengerService.get(passengerId));
+						
 		return "edit";
 	}
 	
@@ -40,12 +44,19 @@ public class DataController {
 		
 		model.addAttribute("pageTitle", "add");
 		model.addAttribute("passenger", new Passenger());
-
+		
 		return "edit";
 	}
 	
 	@PostMapping("/save")
-	public String save(Passenger passenger, BindingResult bindingResult, Model model) {
+	public String save(Passenger passenger, @RequestParam("addOrUpdate") String addOrUpdate, BindingResult bindingResult, Model model) {
+				
+		if (addOrUpdate.equalsIgnoreCase("add")) {
+			passengerService.add(passenger);
+		}
+		else {
+			passengerService.update(passenger);
+		}
 		
 		return "redirect:/passengers";
 	}
@@ -53,10 +64,8 @@ public class DataController {
 	@GetMapping("/delete/{passengerId}")
 	public String delete(Model model, @PathVariable("passengerId") Integer passengerId, 
 			RedirectAttributes redirectAttributes) {
-				
 		
-		redirectAttributes.addFlashAttribute("message", "Successfully deleted passenger");
-
+		passengerService.delete(passengerId);	
 		return "redirect:/passengers";
 	}
 }

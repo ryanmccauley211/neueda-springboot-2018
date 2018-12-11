@@ -1,5 +1,7 @@
 package uk.ac.belfastmet.titanic.controller;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,6 +36,7 @@ public class PassengerController {
 	public String home(Model model) {
 		
 		model.addAttribute("passengers", titanicRepository.findAll());
+		
 		return "passengers";
 	}
 	
