@@ -45,7 +45,7 @@ public class PassengerServiceImpl implements PassengerService {
 	@Override
 	public Passenger add(Passenger passenger) {
 		
-		String addPassengerUrl = apiUrl + "/passengers/" + passenger.getPassengerId();
+		String addPassengerUrl = apiUrl + "/passengers" ;
 
 		this.restTemplate.postForObject(addPassengerUrl, passenger, Passenger.class);
 		return passenger;
@@ -59,11 +59,11 @@ public class PassengerServiceImpl implements PassengerService {
 		this.restTemplate.put(updatePassengerUrl, passenger, Passenger.class);
 		return passenger;
 	}
+	
 	@Override
 	public void delete(Integer passengerId) {
 		String deletePassengerUrl = apiUrl + "/passengers/" + passengerId;
 
 		this.restTemplate.delete(deletePassengerUrl);
 	}
-	
 }
