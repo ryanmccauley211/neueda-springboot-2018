@@ -6,7 +6,7 @@ import uk.ac.belfastmet.titanicrestapi.domain.Passenger;
 
 public interface PassengerRepo extends CrudRepository<Passenger, Integer> {
 
-	Iterable<Passenger> findByPassengerId(Integer passengerId);
+	Passenger findByPassengerId(Integer passengerId);
 
 
 }

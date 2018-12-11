@@ -19,7 +19,7 @@ import uk.ac.belfastmet.titanicconsumer.service.PassengerService;
 public class DataController {
 	
 	
-//	@Autowired
+	@Autowired
 	PassengerService passengerService;
 	
 	public DataController() {super();}

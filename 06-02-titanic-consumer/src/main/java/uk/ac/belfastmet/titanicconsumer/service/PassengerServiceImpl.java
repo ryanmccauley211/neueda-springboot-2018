@@ -24,7 +24,7 @@ public class PassengerServiceImpl implements PassengerService {
 	
 	@Override
 	public ArrayList<Passenger> list() {
-		
+				
 		String listPassengerUrl = apiUrl + "/passengers";
 		
 		AllPassengers allPassengers = this.restTemplate.getForObject(listPassengerUrl, 
@@ -35,7 +35,7 @@ public class PassengerServiceImpl implements PassengerService {
 	
 	@Override
 	public Passenger get(Integer passengerId) {
-		String getPassengerUri = apiUrl + "/passengers/" + passengerId;;
+		String getPassengerUri = apiUrl + "/passengers/" + passengerId;
 		
 		return this.restTemplate.getForObject(getPassengerUri, Passenger.class);
 	}

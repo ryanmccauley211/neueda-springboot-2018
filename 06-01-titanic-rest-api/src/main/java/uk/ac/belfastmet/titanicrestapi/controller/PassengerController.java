@@ -30,7 +30,7 @@ public class PassengerController {
 	}
 	
 	@GetMapping("passengers/{passengerId}")
-	public Iterable<Passenger> getAllPassengers(@PathVariable("passengerId") Integer passengerId) {
+	public Passenger getAllPassengers(@PathVariable("passengerId") Integer passengerId) {
 		
 		return this.passengerRepo.findByPassengerId(passengerId);
 	}

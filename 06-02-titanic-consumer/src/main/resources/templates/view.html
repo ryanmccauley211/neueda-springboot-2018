@@ -62,7 +62,7 @@
 				<th></th>
 			</thead>
 			<tbody>
-				<tr th:each="passenger: ${passengers}">
+				<tr>
 					<td th:text=${passenger.name}></td>
 					<td th:text="${passenger.survived ==True} ? 'Yes' : 'No'"></td>
 					<td th:text=${passenger.sex}></td>

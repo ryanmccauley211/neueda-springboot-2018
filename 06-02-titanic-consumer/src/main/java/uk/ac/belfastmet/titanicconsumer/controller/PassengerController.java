@@ -37,7 +37,9 @@ public class PassengerController {
 	
 	
 	@GetMapping("/passengers")
-	public String home(Model model) {
+	public String passengers(Model model) {
+				
+		model.addAttribute("passengers", this.passengerService.list());
 		
 		return "passengers";
 	}
@@ -49,7 +51,7 @@ public class PassengerController {
 		return "passengers";
 	}
 	
-	@GetMapping("/{passengerId}")
+	@GetMapping("passengers/{passengerId}")
 	public String view(@PathVariable("passengerId") Integer passengerId, Model model) {
 		
 		Passenger passenger = this.passengerService.get(passengerId);
@@ -60,5 +62,4 @@ public class PassengerController {
 		return "view";
 	}
 	
-
 }
