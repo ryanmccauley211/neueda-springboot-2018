@@ -31,9 +31,6 @@ public class BelEventController {
 		
 		AllEvents allEvents = restTemplate.getForObject(eventsUrl, AllEvents.class);
 		allEvents.sort();
-		for (BelEvent bEvent : allEvents.getAllEvents()) {
-			System.out.println(bEvent.getEndDate());
-		}
 		
 		model.addAttribute("events", allEvents.getAllEvents());
 		
