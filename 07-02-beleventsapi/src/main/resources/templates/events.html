@@ -16,12 +16,11 @@
 		
 				<table class="table table-striped">
 			<thead>
-				<th>ID</th>
+				<th>Image</th>
 				<th>ID</th>
 				<th>Title</th>
 				<th>Start Date</th>
 				<th>End Date</th>
-				<th>Time</th>
 				<th>Venue</th>
 				<th>Theme</th>
 				<th>Cost</th>
@@ -33,7 +32,6 @@
 					<td class="align-middle" th:text=${event.title}></td>
 					<td class="align-middle" th:text="${#dates.format(event.startDate, 'dd-MM-yyyy')}"></td>
 					<td class="align-middle" th:text="${event.endDate} ? ${#dates.format(event.endDate, 'dd-MM-yyyy')} : '-'">-</td>
-					<td class="align-middle" th:text=${event.time}></td>
 					<td class="align-middle" th:text=${event.venue}></td>
 					<td class="align-middle" th:text=${event.theme}></td>
 					<td class="align-middle" th:text=${event.cost}></td>
