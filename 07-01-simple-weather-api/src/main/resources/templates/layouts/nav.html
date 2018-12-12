@@ -1,0 +1,26 @@
+<htmL>
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" th:fragment="navFragment">
+	  <!-- Brand -->
+	  <a class="navbar-brand" href="/">Weather</a>
+	
+	  <!-- Links -->
+	  <ul class="navbar-nav nav-fill w-100">
+	    <li class="nav-item">
+	      <a class="nav-link" href="/">Home</a>
+	    </li>
+	    <!-- Dropdown -->
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+	        Weather
+	      </a>
+	      <div class="dropdown-menu dropdown-menu-center">
+	        <a class="dropdown-item" href="/weather/belfast">Belfast</a>
+	        <a class="dropdown-item" href="/weather/dublin">Dublin</a>
+	        <a class="dropdown-item" href="/weather/london">London</a>
+	      </div>
+	    </li>
+	  </ul>
+	</nav>	
+</body>
+</htmL>
