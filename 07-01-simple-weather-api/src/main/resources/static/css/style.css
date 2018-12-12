@@ -8,3 +8,11 @@
   right: auto !important;
   transform: translate(-50%, 0) !important;
 }
+
+.compare-row {
+	padding: 10vh 0;
+}
+
+.card {
+	border: 3px groove #ababab;
+}

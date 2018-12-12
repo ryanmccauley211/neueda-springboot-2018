@@ -7,33 +7,13 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="/css/style.css">
-	<title>Weather</title>
+	<title>Belfast Events</title>
 </head>
 <body>
 	<div class="container fill">
 	
 		<nav th:replace="layouts/nav :: navFragment"></nav>
-		
-		<h2 class="page-header" th:text="'Weather for ' + ${todaysWeather.location.name}"></h2>
-		
-		<table class="table table-striped">
-			<thead>
-				<th>Lat Long</th>
-				<th>Cloud Cover</th>
-				<th>Wind</th>
-				<th>Description</th>
-				<th></th>
-			</thead>
-			<tbody>
-				<tr valign="bottom">
-					<td class="align-middle" th:text="'(' + ${todaysWeather.location.latitude} + ', ' + ${todaysWeather.location.longitude} + ')'"></td>
-					<td class="align-middle" th:text="${todaysWeather.weather.cloudcover} + '%'"></td>
-					<td class="align-middle" th:text="${todaysWeather.weather.wind.speed} + 'mph ' + ${todaysWeather.weather.wind.direction}"></td>
-					<td class="align-middle" th:text="${todaysWeather.weather.description}"></td>
-					<td class="align-middle"><img th:src=${todaysWeather.weather.image}></td>
-				</tr>
-			</tbody>
-		</table>	
+			
 	</div>
 </body>
 </html>

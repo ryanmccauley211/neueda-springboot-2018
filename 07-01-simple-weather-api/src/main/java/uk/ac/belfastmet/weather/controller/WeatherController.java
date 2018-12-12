@@ -22,11 +22,11 @@ public class WeatherController {
 	}
 	
 	@GetMapping("/weather/{location}") 
-		public String belfast(@PathVariable("location") String location, Model model) {
+		public String weather(@PathVariable("location") String location, Model model) {
 		
-		String belfastWeatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=" + location;
+		String weatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=" + location;
 		RestTemplate restTemplate = new RestTemplate();
-		TodaysWeather todaysWeather = restTemplate.getForObject(belfastWeatherUrl, TodaysWeather.class);
+		TodaysWeather todaysWeather = restTemplate.getForObject(weatherUrl, TodaysWeather.class);
 		
 		Logger logger = LoggerFactory.getLogger(TodaysWeather.class);
 		logger.info(todaysWeather.toString());
@@ -34,6 +34,29 @@ public class WeatherController {
 		model.addAttribute("todaysWeather", todaysWeather);
 		
 		return "weather";
+	}
+	
+	@GetMapping("/compare") 
+		public String compare(Model model) {
+		
+		String belWeatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=belfast";
+		RestTemplate restTemplate = new RestTemplate();
+		TodaysWeather belfastWeather = restTemplate.getForObject(belWeatherUrl, TodaysWeather.class);
+		
+		String dubWeatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=dublin";
+		RestTemplate dubWestTemplate = new RestTemplate();
+		TodaysWeather dublintWeather = restTemplate.getForObject(dubWeatherUrl, TodaysWeather.class);
+		
+		String lonWeatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=london";
+		RestTemplate lonWestTemplate = new RestTemplate();
+		TodaysWeather londontWeather = restTemplate.getForObject(lonWeatherUrl, TodaysWeather.class);
+
+		
+		model.addAttribute("belfast", belfastWeather);
+		model.addAttribute("dublin", dublintWeather);
+		model.addAttribute("london", londontWeather);
+
+		return "compare";
 	}
 
 }
