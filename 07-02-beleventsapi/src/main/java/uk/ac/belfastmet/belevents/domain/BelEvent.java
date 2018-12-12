@@ -15,7 +15,7 @@ public class BelEvent<T> implements Comparable<T> {
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date startDate;
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private String endDate;
+	private Date endDate;
 	private String time;
 	private String venue;
 	private String venueUrl;

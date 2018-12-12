@@ -5,7 +5,7 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2018-12-12T14:09:49Z</updated>
+  <updated>2018-12-12T14:09:00Z</updated>
   <entry>
     <title>How Fast is Spring?</title>
     <link rel="alternate" href="https://spring.io/blog/2018/12/12/how-fast-is-spring" />
@@ -14,7 +14,7 @@
       <name>Dave Syer</name>
     </author>
     <id>tag:spring.io,2018-12-12:3497</id>
-    <updated>2018-12-12T14:09:49Z</updated>
+    <updated>2018-12-12T14:09:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;Performance has always been one of the top priorities of the Spring Engineering team, and we are continually monitoring and responding to changes and to feedback. Some fairly intense and precise work has been done recently (in the last 2-3 years) and this article is here to help you to find the results of that work and to learn how to measure and improve performance in your own applications. The headline is that Spring Boot 2.1 and Spring 5.1 have some quite nice optimizations for startup time and heap usage. Here&amp;#8217;s a graph made by measuring startup time for heap constrained apps:&lt;/p&gt;
 &lt;/div&gt;
@@ -131,7 +131,8 @@ Example for testing in IDE:
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Make bean definitions lazy by default. There&amp;#8217;s nothing in Spring
-Boot that does this, but there&amp;#8217;s a &lt;code&gt;LazyInitBeanFactoryPostProcessor&lt;/code&gt;
+Boot that does this generally, but you can set &lt;code&gt;spring.data.jpa.repositories.bootstrap-mode&lt;/code&gt;
+to defer the Spring Data initialization. There is also a &lt;code&gt;LazyInitBeanFactoryPostProcessor&lt;/code&gt;
 in &lt;a href="https://github.com/dsyer/spring-boot-allocations"&gt;this project&lt;/a&gt; you can copy.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -368,7 +369,7 @@ MiniBenchmark.micro      jlog    ss   10  0.186 ± 0.006   s/op 1371&lt;/code&gt;
 &lt;p&gt;Make bean definitions lazy by default. There&amp;#8217;s nothing in Spring Boot that does this, but there&amp;#8217;s a &lt;code&gt;LazyInitBeanFactoryPostProcessor&lt;/code&gt; in &lt;a href="https://github.com/dsyer/spring-boot-allocations"&gt;this project&lt;/a&gt; you can copy. It is just a &lt;code&gt;BeanFactoryPostProcessor&lt;/code&gt; that switches all beans to &lt;code&gt;lazy=true&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Spring Data has some lazy initialization features now (in Lovelace, or Spring Boot 2.1). In Spring Boot you can just set &lt;code&gt;spring.data.jpa.repositories.bootstrap-mode=lazy&lt;/code&gt; - for large apps with 100s of entities improves startup time by more than a factor of 10.&lt;/p&gt;
+&lt;p&gt;Spring Data has some lazy initialization features now (in Lovelace, or Spring Boot 2.1). In Spring Boot you can just set &lt;code&gt;spring.data.jpa.repositories.bootstrap-mode=deferred&lt;/code&gt; (or &lt;code&gt;lazy&lt;/code&gt; for completely lazy) - for large apps with 100s of entities improves startup time by more than a factor of 10.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Use functional bean definitions instead of &lt;code&gt;@Configuration&lt;/code&gt;. More detail later on this.&lt;/p&gt;
@@ -491,16 +492,15 @@ MiniBenchmark.micro      jlog    ss   10  0.152 ± 0.045   s/op 1436&lt;/code&gt;
 &lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@SpringBootConfiguration
 @Import({ PropertyPlaceholderAutoConfiguration.class,
           ConfigurationPropertiesAutoConfiguration.class,
-	  ReactiveWebServerFactoryAutoConfiguration.class,
+		  ReactiveWebServerFactoryAutoConfiguration.class,
           WebFluxAutoConfiguration.class,
-	  ErrorWebFluxAutoConfiguration.class,
+		  ErrorWebFluxAutoConfiguration.class,
           HttpHandlerAutoConfiguration.class })
 public class SampleApplication {
 
 	@Bean
 	public RouterFunction&amp;lt;?&amp;gt; userEndpoints() {
-		return route(GET("/"), request -&amp;gt;
-			ok().body(Mono.just("Hello"), String.class));
+		return route(GET("/"), request -&amp;gt; ok().body(Mono.just("Hello"), String.class));
 	}
 
 	public static void main(String[] args) {
