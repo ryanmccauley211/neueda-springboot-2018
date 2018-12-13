@@ -13,34 +13,6 @@
 	<div class="container fill">
 	
 		<nav th:replace="layouts/nav :: navFragment"></nav>
-		
-		<table class="table table-striped">
-			<thead>
-				<th>Image</th>
-				<th>ID</th>
-				<th>Title</th>
-				<th>Start Date</th>
-				<th>End Date</th>
-				<th>Venue</th>
-				<th>Theme</th>
-				<th>Cost</th>
-			</thead>
-			<tbody>
-				<tr th:each="event: ${events}">
-					<td class="align-middle"><img th:src=${event.image} width=150 height=150></td>
-					<td class="align-middle" th:text=${event.identifier}></td>
-					<td class="align-middle" th:text=${event.title}></td>
-					<td class="align-middle" th:text="${#dates.format(event.startDate, 'dd-MM-yyyy')}"></td>
-					<td class="align-middle" th:text="${event.endDate} ? ${#dates.format(event.endDate, 'dd-MM-yyyy')} : '-'">-</td>
-					<td class="align-middle" th:text=${event.venue}></td>
-					<td class="align-middle" th:text=${event.theme}></td>
-					<td class="align-middle" th:text=${event.cost}></td>
-					<td class="align-middle"><a th:href=${event.url}>Find out more</td>
-				</tr>
-			</tbody>
-		</table>
-		
-		
 			
 	</div>
 </body>
